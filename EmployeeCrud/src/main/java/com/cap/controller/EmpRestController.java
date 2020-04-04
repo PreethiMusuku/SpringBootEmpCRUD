@@ -22,18 +22,18 @@ import com.cap.service.EmployeeService;
 
 public class EmpRestController {
 	@Autowired
-	EmployeeService service;
+	private EmployeeService service;
 	@PostMapping("/create")
 	public String createAccount(@RequestBody Employee emp) {
 		return service.createAccount(emp);	
 	}
 	@GetMapping("/findById/{id}")
-	public Employee findById(@PathVariable("id") int eid) {
-		return service.findById(eid);	
+	public Employee findById(@PathVariable("id") int id) {
+		return service.findById(id);	
 	}
 	@DeleteMapping("/deleteById/{id}")
-	public String deleteById(@PathVariable int eid) {
-		return service.deleteById(eid);
+	public String deleteById(@PathVariable int id) {
+		return service.deleteById(id);
 	}
 	@GetMapping("/fetchAll")
 	public List fetchAll() {

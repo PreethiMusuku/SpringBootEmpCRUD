@@ -9,9 +9,9 @@ public interface EmployeeService {
 
 	public String createAccount(Employee emp);
 
-	public Employee findById(int eid);
+	public Employee findById(int id);
 
-	public String deleteById(int eid);
+	public String deleteById(int id);
 
 	public List fetchAll();
 

@@ -10,23 +10,23 @@ import com.cap.entity.Employee;
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
 	@Autowired
-	EmployeeDao dao;
+	private EmployeeDao dao;
 	@Override
 		public String createAccount(Employee emp) {
 			return	dao.createAccount(emp);
 			 
 		}
 		@Override
-		public Employee findById(int eid) {
+		public Employee findById(int id) {
 			
-			return dao.findById(eid);
+			return dao.findById(id);
 			
 		
 		}
 		@Override
-		public String deleteById(int eid) {
+		public String deleteById(int id) {
 			// TODO Auto-generated method stub
-			return dao.deleteById(eid);
+			return dao.deleteById(id);
 		}
 		@Override
 		public List fetchAll() {

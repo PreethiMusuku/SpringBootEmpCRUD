@@ -1,37 +1,35 @@
 package com.cap.entity;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "empspring")
+@Table(name = "emptable")
 public class Employee  {
     @Id
     @GeneratedValue
-    private int eid;
-    private String ename;
-    private int esal;
-	public int getEid() {
-		return eid;
+    private int id;
+    private String name;
+    private int sal;
+	public int getId() {
+		return id;
 	}
-	public void setEid(int eid) {
-		this.eid = eid;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getEname() {
-		return ename;
+	public String getName() {
+		return name;
 	}
-	public void setEname(String ename) {
-		this.ename = ename;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public int getEsal() {
-		return esal;
+	public int getSal() {
+		return sal;
 	}
-	public void setEsal(int esal) {
-		this.esal = esal;
+	public void setSal(int sal) {
+		this.sal = sal;
 	}
 	
 }

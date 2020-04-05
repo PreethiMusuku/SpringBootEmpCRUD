@@ -9,7 +9,7 @@ public interface EmployeeService {
 
 	public String createAccount(Employee emp);
 
-	public Employee findById(int id);
+	public Employee findEmpById(int id);
 
 	public String deleteById(int id);
 

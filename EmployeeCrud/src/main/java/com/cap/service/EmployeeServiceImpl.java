@@ -17,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 			 
 		}
 		@Override
-		public Employee findById(int id) {
+		public Employee findEmpById(int id) {
 			
 			return dao.findById(id);
 			
@@ -38,7 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 			// TODO Auto-generated method stub
 			return dao.updateEmp(emp);
 		}
-
+		
 	}
 	
 		

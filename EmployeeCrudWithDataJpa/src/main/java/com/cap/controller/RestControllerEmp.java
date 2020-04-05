@@ -16,34 +16,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cap.entity.Employee;
 import com.cap.service.EmployeeService;
+
 @RestController
-@RequestMapping("/bank")
-@CrossOrigin("http://localhost:4200")
+@RequestMapping("/Emp")
+@CrossOrigin("http://localhost:9098")//
+public class RestControllerEmp{
 
-public class EmpRestController {
 	@Autowired
-	private EmployeeService service;
-	@PostMapping("/create")
+	private EmployeeService empService;
+	@PostMapping("/CreateAccount")
 	public String createAccount(@RequestBody Employee emp) {
-		return service.createAccount(emp);	
+		return empService.createEmployee(emp);
 	}
-	@GetMapping("/findById/{id}")
-	public Employee findById(@PathVariable("id") int id) {
-		return service.findEmpById(id);	
+	@GetMapping("/findById/{empId}")
+	public Optional<Employee> findEmployee(@PathVariable Integer empId) {
+		return empService.findEmployee(empId);
 	}
-	@DeleteMapping("/deleteById/{id}")
-	public String deleteById(@PathVariable int id) {
-		return service.deleteById(id);
+	@GetMapping("/findAll")
+	public List<Employee> findAllEmployees() {
+		return empService.findAllEmployees();
 	}
-	@GetMapping("/fetchAll")
-	public List fetchAll() {
-		return service.fetchAll();
-		
+	@GetMapping(path="/findByName/{empName}")
+	public List<Employee> findEmployeeByName(@PathVariable String empName) {
+		return empService.findEmpByName(empName);
 	}
-	@PostMapping("/update")
+	@PutMapping("/updateEmp")
 	public String updateEmp(@RequestBody Employee emp) {
-		return service.updateEmp(emp);
-		
+		return empService.updateEmployee(emp);
 	}
-
+	@DeleteMapping("/deleteEmp/{empId}")
+	public String deleteEmp(@PathVariable Integer empId) {
+		return empService.deleteEmpById(empId);
+	}
 }
+
+
